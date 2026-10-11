@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #f7f8f5;
+  --surface: #ffffff;
+  --text: #172d2b;
+  --muted: #778783;
+  --primary: #126b5b;
+  --primary-dark: #0b5045;
+  --accent: #d8f078;
+  --border: #e5eae5;
+  --radius: 22px;
+  --container: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.navbar {
+  width: min(var(--container), calc(100% - 64px));
+  min-height: 92px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: white;
+  border-radius: 13px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.logo-text strong {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.3px;
+}
+
+.logo-text small {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links a,
+.login-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #566661;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.login-link:hover {
+  color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.btn {
+  min-height: 48px;
+  padding: 0 23px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.hero {
+  width: min(var(--container), calc(100% - 64px));
+  min-height: 625px;
+  margin: auto;
+  padding: 90px 0 85px;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow,
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.status-dot,
+.card-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #91c95a;
+}
+
+.hero h1 {
+  margin: 27px 0 23px;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(44px, 5vw, 69px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -3.5px;
+}
+
+.hero h1 span,
+.about-section h2 span {
+  color: var(--primary);
+}
+
+.hero-content > p {
+  max-width: 475px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 31px;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 58px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-stats strong {
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+}
+
+.hero-stats span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.hero-visual {
+  min-height: 430px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.visual-glow {
+  position: absolute;
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  background: #e5efd9;
+  filter: blur(2px);
+}
+
+.medical-card {
+  width: min(100%, 390px);
+  min-height: 390px;
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #145f51, #0c443c);
+  color: white;
+  box-shadow: 0 30px 80px rgba(21, 70, 58, 0.2);
+}
+
+.medical-card::after {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  right: -100px;
+  bottom: -110px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 25px rgba(255, 255, 255, 0.025),
+    0 0 0 50px rgba(255, 255, 255, 0.025);
+}
+
+.card-top,
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-label,
+.card-footer {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.card-label {
+  color: #c3d9ce;
+}
+
+.medical-symbol {
+  width: 110px;
+  height: 110px;
+  margin: 43px 0 24px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(216, 240, 120, 0.35);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 65px;
+  font-weight: 400;
+}
+
+.medical-card h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 29px;
+  line-height: 1.3;
+  letter-spacing: -1px;
+}
+
+.medical-card > p {
+  margin-top: 10px;
+  color: #c3d9ce;
+  font-size: 12px;
+}
+
+.card-divider {
+  height: 1px;
+  margin: 25px 0 17px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.card-footer {
+  color: #c3d9ce;
+}
+
+.floating-tag {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 17px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: white;
+  box-shadow: 0 12px 40px rgba(23, 45, 43, 0.08);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tag-top {
+  top: 40px;
+  right: -5px;
+}
+
+.tag-bottom {
+  bottom: 36px;
+  left: -24px;
+}
+
+.tag-icon {
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.courses-section {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto;
+  padding: 70px 0 90px;
+  border-top: 1px solid var(--border);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  margin-top: 12px;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(27px, 3vw, 38px);
+  letter-spacing: -1.5px;
+}
+
+.course-count {
+  padding-bottom: 7px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+.course-placeholder {
+  display: grid;
+  grid-template-columns: 65px 1fr 45px;
+  align-items: center;
+  gap: 25px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.course-placeholder:hover {
+  transform: translateY(-3px);
+  border-color: #b9d1c3;
+}
+
+.course-number {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #edf4e8;
+  color: var(--primary);
+  font-family: 'Manrope', sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.course-info > span {
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.course-info h3 {
+  margin: 7px 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+}
+
+.course-info p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.course-arrow {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.about-section {
+  padding: 95px 24px;
+  text-align: center;
+  background: #edf3e9;
+}
+
+.about-section h2 {
+  margin-top: 22px;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(34px, 5vw, 53px);
+  line-height: 1.2;
+  letter-spacing: -2px;
+}
+
+.about-section > p {
+  max-width: 530px;
+  margin: 20px auto 0;
+  color: #667a71;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.footer {
+  width: min(var(--container), calc(100% - 64px));
+  min-height: 100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-brand {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.footer p,
+.footer > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    width: calc(100% - 40px);
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-actions {
+    gap: 15px;
+  }
+
+  .hero {
+    width: calc(100% - 40px);
+    grid-template-columns: 1fr 0.85fr;
+    gap: 25px;
+    padding: 70px 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(39px, 5.5vw, 55px);
+    letter-spacing: -2px;
+  }
+
+  .medical-card {
+    min-height: 350px;
+    padding: 24px;
+  }
+
+  .medical-symbol {
+    width: 85px;
+    height: 85px;
+    margin: 35px 0 20px;
+  }
+
+  .medical-card h2 {
+    font-size: 25px;
+  }
+
+  .courses-section,
+  .footer {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    min-height: 75px;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 0;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 0 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .nav-actions .btn {
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: 11px;
+  }
+
+  .nav-actions .login-link {
+    font-size: 11px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 65px 0 55px;
+    gap: 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 11vw, 60px);
+  }
+
+  .hero-content > p {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 38px;
+  }
+
+  .hero-stats span {
+    max-width: 100px;
+  }
+
+  .hero-visual {
+    min-height: 420px;
+  }
+
+  .medical-card {
+    width: min(100%, 360px);
+  }
+
+  .tag-top {
+    right: -5px;
+  }
+
+  .tag-bottom {
+    left: -5px;
+  }
+
+  .courses-section {
+    padding: 55px 0;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .course-placeholder {
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 22px;
+  }
+
+  .course-number {
+    width: 45px;
+    height: 45px;
+  }
+
+  .course-info h3 {
+    font-size: 17px;
+  }
+
+  .course-info p {
+    font-size: 12px;
+  }
+
+  .course-arrow {
+    display: none;
+  }
+
+  .about-section {
+    padding: 75px 24px;
+  }
+
+  .footer {
+    padding: 25px 0;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
