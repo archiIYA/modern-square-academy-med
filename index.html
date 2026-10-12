@@ -1,187 +1,365 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Modern Square Academy Med — A modern platform for medical learning.">
+  <meta name="theme-color" content="#07172e">
+
+  <meta
+    name="description"
+    content="Modern Square Academy Med — A new dimension in medical education."
+  >
 
   <title>Modern Square Academy Med</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
 
-  <header class="navbar">
-    <a href="index.html" class="logo">
-      <span class="logo-icon">MS</span>
-      <span class="logo-text">
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-symbol">MS</div>
+    <span>MODERN SQUARE</span>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+
+    <a class="brand" href="#home" aria-label="Modern Square Academy Med">
+
+      <span class="brand-mark">MS</span>
+
+      <span class="brand-copy">
         <strong>MODERN SQUARE</strong>
-        <small>ACADEMY MED</small>
+        <small>ACADEMY <span>MED</span></small>
       </span>
+
     </a>
 
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#courses">Courses</a>
-      <a href="#about">About</a>
+    <button
+      class="mobile-menu-button"
+      id="mobileMenuButton"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="mainNavigation"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-navigation" id="mainNavigation">
+
+      <a href="#home" data-i18n="navHome">Home</a>
+      <a href="#programs" data-i18n="navPrograms">Programs</a>
+      <a href="#about" data-i18n="navAbout">About us</a>
+
+      <a href="#contact" data-i18n="navContact">Contact</a>
+
     </nav>
 
-    <div class="nav-actions">
-      <a href="login.html" class="login-link">Log in</a>
-      <a href="register.html" class="btn btn-primary">Get Started</a>
+    <div class="header-actions">
+
+      <label class="language-control">
+        <span class="sr-only">Language</span>
+
+        <select id="languageSelector" aria-label="Select language">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="ar">AR</option>
+        </select>
+      </label>
+
+      <a href="login.html" class="header-login" data-i18n="login">
+        Log in
+      </a>
+
+      <a href="register.html" class="header-cta" data-i18n="getStarted">
+        Get started <span>↗</span>
+      </a>
+
     </div>
+
   </header>
 
   <main>
 
-    <section class="hero" id="home">
+    <section class="hero-section" id="home">
 
-      <div class="hero-content">
+      <div class="hero-grid">
 
-        <div class="eyebrow">
-          <span class="status-dot"></span>
-          THE FUTURE OF MEDICAL LEARNING
+        <div class="hero-content reveal">
+
+          <div class="hero-eyebrow">
+            <span class="eyebrow-line"></span>
+            <span data-i18n="eyebrow">
+              THE NEXT DIMENSION OF MEDICAL EDUCATION
+            </span>
+          </div>
+
+          <h1 data-i18n="heroTitle">
+            Medical knowledge.<br>
+            <span>Without limits.</span>
+          </h1>
+
+          <p class="hero-description" data-i18n="heroDescription">
+            Discover a smarter way to learn medicine through structured
+            courses, scientific resources and a learning experience
+            designed for the next generation.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#programs" class="button-primary">
+              <span data-i18n="explorePrograms">Explore programs</span>
+              <span class="button-arrow">↗</span>
+            </a>
+
+            <a href="#about" class="button-secondary">
+              <span class="play-icon">▶</span>
+              <span data-i18n="discoverAcademy">Discover the academy</span>
+            </a>
+
+          </div>
+
+          <div class="hero-proof">
+
+            <div class="proof-symbols" aria-hidden="true">
+              <span>+</span>
+              <span>✳</span>
+              <span>◈</span>
+            </div>
+
+            <p data-i18n="heroProof">
+              Learn. Understand. Advance.
+            </p>
+
+          </div>
+
         </div>
 
-        <h1>
-          Learn medicine.<br>
-          <span>Build your future.</span>
-        </h1>
+        <div class="hero-art reveal">
 
-        <p>
-          Discover a new way to learn medicine through structured courses,
-          visual resources, and a learning experience designed for students.
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-orbit orbit-three"></div>
+
+          <div class="art-cross cross-one">+</div>
+          <div class="art-cross cross-two">+</div>
+          <div class="art-cross cross-three">✳</div>
+
+          <div class="art-glow"></div>
+
+          <div class="art-core">
+
+            <div class="core-ring"></div>
+
+            <div class="core-content">
+              <span class="core-monogram">MS</span>
+              <span class="core-line"></span>
+              <span class="core-caption">ACADEMY MED</span>
+            </div>
+
+          </div>
+
+          <div class="floating-card card-top">
+
+            <span class="floating-card-icon">✳</span>
+
+            <div>
+              <strong data-i18n="cardScientific">Scientific learning</strong>
+              <small data-i18n="cardScientificSub">Knowledge in focus</small>
+            </div>
+
+          </div>
+
+          <div class="floating-card card-bottom">
+
+            <span class="floating-card-icon">↗</span>
+
+            <div>
+              <strong data-i18n="cardProgress">Your next chapter</strong>
+              <small data-i18n="cardProgressSub">Starts here</small>
+            </div>
+
+          </div>
+
+          <div class="art-index">
+            <span>MS / MED</span>
+            <span>001 — 026</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-bottom-line">
+
+        <span data-i18n="heroBottomLeft">A NEW APPROACH TO LEARNING</span>
+
+        <a href="#programs">
+          <span data-i18n="scrollExplore">SCROLL TO EXPLORE</span>
+          <span class="scroll-arrow">↓</span>
+        </a>
+
+      </div>
+
+    </section>
+
+    <section class="programs-section section-padding" id="programs">
+
+      <div class="section-heading reveal">
+
+        <div>
+          <span class="section-kicker" data-i18n="programsKicker">
+            YOUR LEARNING JOURNEY
+          </span>
+
+          <h2 data-i18n="programsTitle">
+            Knowledge that moves<br>
+            <span>you forward.</span>
+          </h2>
+        </div>
+
+        <p data-i18n="programsDescription">
+          Explore educational resources designed to help you build
+          knowledge, strengthen your understanding and progress
+          with confidence.
         </p>
 
-        <div class="hero-actions">
-          <a href="#courses" class="btn btn-primary">
-            Explore Courses <span>↗</span>
-          </a>
-
-          <a href="#about" class="btn btn-secondary">
-            Discover Modern Square
-          </a>
-        </div>
-
-        <div class="hero-stats">
-          <div>
-            <strong>01</strong>
-            <span>Learn at your pace</span>
-          </div>
-
-          <div>
-            <strong>02</strong>
-            <span>Structured learning</span>
-          </div>
-
-          <div>
-            <strong>03</strong>
-            <span>Medical resources</span>
-          </div>
-        </div>
-
       </div>
 
-      <div class="hero-visual">
+      <div class="program-card reveal">
 
-        <div class="visual-glow"></div>
+        <div class="program-number">01</div>
 
-        <div class="medical-card">
+        <div class="program-card-content">
 
-          <div class="card-top">
-            <span class="card-label">YOUR LEARNING SPACE</span>
-            <span class="card-indicator"></span>
-          </div>
+          <span class="program-label" data-i18n="programLabel">
+            MEDICAL EDUCATION
+          </span>
 
-          <div class="medical-symbol">✳</div>
+          <h3 data-i18n="programTitle">
+            Your medical learning journey starts here.
+          </h3>
 
-          <h2>Medical knowledge,<br>reimagined.</h2>
-
-          <p>
-            One platform. Your learning journey.
+          <p data-i18n="programDescription">
+            Discover structured courses, educational resources
+            and scientific learning materials.
           </p>
 
-          <div class="card-divider"></div>
-
-          <div class="card-footer">
-            <span>MODERN SQUARE</span>
-            <span>MED / 001</span>
-          </div>
+          <span class="program-status" data-i18n="comingSoon">
+            FIRST COURSES COMING SOON
+          </span>
 
         </div>
 
-        <div class="floating-tag tag-top">
-          <span class="tag-icon">✦</span>
-          <span>Learn differently</span>
-        </div>
-
-        <div class="floating-tag tag-bottom">
-          <span class="tag-icon">↗</span>
-          <span>Your next chapter starts here</span>
+        <div class="program-card-visual" aria-hidden="true">
+          <div class="visual-circle circle-one"></div>
+          <div class="visual-circle circle-two"></div>
+          <div class="visual-cross">+</div>
+          <span>MED / 001</span>
         </div>
 
       </div>
 
     </section>
 
-    <section class="courses-section" id="courses">
+    <section class="about-section section-padding" id="about">
 
-      <div class="section-heading">
-        <div>
-          <span class="section-label">START LEARNING</span>
-          <h2>Explore our learning space.</h2>
+      <div class="about-visual reveal">
+
+        <div class="about-monogram">MS<span>.</span></div>
+
+        <div class="about-visual-caption">
+          MODERN SQUARE<br>
+          ACADEMY MED
         </div>
 
-        <span class="course-count">01 — MEDICAL EDUCATION</span>
       </div>
 
-      <div class="course-placeholder">
+      <div class="about-content reveal">
 
-        <div class="course-number">01</div>
+        <span class="section-kicker" data-i18n="aboutKicker">
+          THE MODERN SQUARE VISION
+        </span>
 
-        <div class="course-info">
-          <span>MEDICINE / EDUCATION</span>
-          <h3>Your first course starts here.</h3>
-          <p>
-            Our educational content is being prepared.
-            Your next learning experience is coming soon.
-          </p>
-        </div>
+        <h2 data-i18n="aboutTitle">
+          More than learning.<br>
+          <span>A way forward.</span>
+        </h2>
 
-        <div class="course-arrow">↗</div>
+        <p data-i18n="aboutDescription">
+          Modern Square Academy Med is an educational initiative
+          dedicated to making medical knowledge more accessible,
+          organized and engaging through a contemporary learning
+          experience.
+        </p>
+
+        <a href="#contact" class="text-link">
+          <span data-i18n="learnMore">Discover our vision</span>
+          <span>↗</span>
+        </a>
 
       </div>
 
     </section>
 
-    <section class="about-section" id="about">
+    <section class="contact-section" id="contact">
 
-      <span class="section-label">OUR VISION</span>
+      <div class="contact-inner reveal">
 
-      <h2>
-        Education designed<br>
-        <span>for curious minds.</span>
-      </h2>
+        <span class="section-kicker" data-i18n="contactKicker">
+          YOUR NEXT STEP
+        </span>
 
-      <p>
-        Modern Square Academy Med is an educational initiative
-        dedicated to making medical knowledge more accessible,
-        organized, and engaging.
-      </p>
+        <h2 data-i18n="contactTitle">
+          Ready to learn<br>
+          <span>something new?</span>
+        </h2>
+
+        <p data-i18n="contactDescription">
+          Begin your journey with Modern Square Academy Med.
+        </p>
+
+        <a href="register.html" class="button-primary">
+          <span data-i18n="joinAcademy">Join the academy</span>
+          <span class="button-arrow">↗</span>
+        </a>
+
+      </div>
 
     </section>
 
   </main>
 
-  <footer class="footer">
-    <a href="index.html" class="footer-brand">MODERN SQUARE</a>
+  <footer class="site-footer">
 
-    <p>Learn. Understand. Advance.</p>
+    <a class="footer-brand" href="#home">
+      MODERN SQUARE <span>ACADEMY MED</span>
+    </a>
 
-    <span>© 2026 Modern Square Academy Med</span>
+    <p data-i18n="footerTagline">
+      Learn. Understand. Advance.
+    </p>
+
+    <span class="footer-copyright">
+      © <span id="currentYear">2026</span> Modern Square
+    </span>
+
   </footer>
+
+</body>
+</html>
 
 </body>
 </html>
